@@ -120,9 +120,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Código";
+            this.label1.Text = "Código Consulta";
             // 
             // lblTuss
             // 
@@ -139,6 +139,7 @@
             this.txtConsulta.Name = "txtConsulta";
             this.txtConsulta.Size = new System.Drawing.Size(111, 20);
             this.txtConsulta.TabIndex = 1;
+            this.txtConsulta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsulta_KeyPress);
             // 
             // panel4
             // 
@@ -194,7 +195,7 @@
             this.txtEspecialidade.Location = new System.Drawing.Point(503, 27);
             this.txtEspecialidade.Name = "txtEspecialidade";
             this.txtEspecialidade.Size = new System.Drawing.Size(217, 20);
-            this.txtEspecialidade.TabIndex = 67;
+            this.txtEspecialidade.TabIndex = 4;
             // 
             // btnGravar
             // 
@@ -220,7 +221,7 @@
             this.txtDut.Location = new System.Drawing.Point(254, 27);
             this.txtDut.Name = "txtDut";
             this.txtDut.Size = new System.Drawing.Size(217, 20);
-            this.txtDut.TabIndex = 64;
+            this.txtDut.TabIndex = 3;
             // 
             // label2
             // 
@@ -236,7 +237,7 @@
             this.txtOpme.Location = new System.Drawing.Point(10, 149);
             this.txtOpme.Name = "txtOpme";
             this.txtOpme.Size = new System.Drawing.Size(748, 20);
-            this.txtOpme.TabIndex = 62;
+            this.txtOpme.TabIndex = 7;
             // 
             // label12
             // 
@@ -252,7 +253,7 @@
             this.txtDesfavoravel.Location = new System.Drawing.Point(10, 110);
             this.txtDesfavoravel.Name = "txtDesfavoravel";
             this.txtDesfavoravel.Size = new System.Drawing.Size(748, 20);
-            this.txtDesfavoravel.TabIndex = 60;
+            this.txtDesfavoravel.TabIndex = 6;
             // 
             // label27
             // 
@@ -268,7 +269,7 @@
             this.txtFavoravel.Location = new System.Drawing.Point(10, 67);
             this.txtFavoravel.Name = "txtFavoravel";
             this.txtFavoravel.Size = new System.Drawing.Size(748, 20);
-            this.txtFavoravel.TabIndex = 58;
+            this.txtFavoravel.TabIndex = 5;
             // 
             // label29
             // 
@@ -284,7 +285,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(10, 27);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(217, 20);
-            this.txtCodigo.TabIndex = 49;
+            this.txtCodigo.TabIndex = 2;
             // 
             // panel5
             // 
@@ -318,7 +319,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manutencao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manutencao";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

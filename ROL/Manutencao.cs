@@ -15,6 +15,7 @@ namespace ROL
     public partial class Manutencao : Form
     {
         DadosConsulta dadosConsultaDUT = new DadosConsulta();
+        public double codigo;
         public Manutencao()
         {
             InitializeComponent();
@@ -28,24 +29,37 @@ namespace ROL
         private void ConsultaDut()
         {
             DadosConsulta dadosConsultaDut = new DadosConsulta();
+                       
             EntidadeDut entidade = new EntidadeDut();
             entidade.NomeCampo = "Codigo";
             entidade.NomeTabela = "dut";
 
-            List<EntidadeDut> listaDut = dadosConsultaDut.ResgatarDadosManutencaoDut(this.txtConsulta.Text, entidade.NomeTabela, entidade.NomeCampo);
-            if (listaDut.Count > 0)
+            if (!string.IsNullOrEmpty(txtConsulta.Text))
             {
-                this.txtCodigo.Text = listaDut[0].Codigo.ToString();
-                this.txtEspecialidade.Text = listaDut[0].Especialidade.ToString();
-                this.txtOpme.Text = listaDut[0].Opme.ToString();
-                this.txtDut.Text = listaDut[0].Dut.ToString();
-                this.txtFavoravel.Text = listaDut[0].Favoravel.ToString();
-                this.txtDesfavoravel.Text = listaDut[0].Desfavoravel.ToString();
-                return;
+                List<EntidadeDut> listaDut = dadosConsultaDut.ResgatarDadosManutencaoDut(this.txtConsulta.Text, entidade.NomeTabela, entidade.NomeCampo);
+                if (listaDut.Count > 0)
+                {
+                    codigo = Convert.ToDouble(txtConsulta.Text);
+                   
+
+                    this.txtCodigo.Text = listaDut[0].Codigo.ToString();
+                    this.txtEspecialidade.Text = listaDut[0].Especialidade.ToString();
+                    this.txtOpme.Text = listaDut[0].Opme.ToString();
+                    this.txtDut.Text = listaDut[0].Dut.ToString();
+                    this.txtFavoravel.Text = listaDut[0].Favoravel.ToString();
+                    this.txtDesfavoravel.Text = listaDut[0].Desfavoravel.ToString();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Não existe valores para o código pesquisado!");
+                }
+            }else
+            {
+                MessageBox.Show("Campo Código precisa ser preenchido!");
+                txtCodigo.Focus();
             }
-            else {
-                MessageBox.Show("Não existe valores para o código pesquisado!");
-            }
+           
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -105,12 +119,20 @@ namespace ROL
 
                 dadosConsultaDUT.AlterarDut(entidade);
            
-        }
+        }        
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
         {
-            ArquivoDut arquivo = new ArquivoDut();
-            arquivo.Show();
+            if (!string.IsNullOrEmpty(txtConsulta.Text))
+            {
+                ArquivoDut arquivoDut = new ArquivoDut(codigo);
+                arquivoDut.Show();
+            }else
+            {
+                MessageBox.Show("Obrigatório preecher o Codigo Consulta!");
+                txtConsulta.Focus();
+            }
+            
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -122,6 +144,15 @@ namespace ROL
             txtEspecialidade.Text = String.Empty;
             txtFavoravel.Text = String.Empty;
             txtOpme.Text = String.Empty;
+        }
+
+        private void txtConsulta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ConsultaDut();
+                txtCodigo.Enabled = false;
+            }            
         }
     }
 }

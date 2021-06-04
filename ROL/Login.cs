@@ -49,5 +49,13 @@ namespace ROL
             this.Hide();
             pesquisa.Show();
         }
+
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ConsultaUsuario();
+            }
+        }
     }
 }

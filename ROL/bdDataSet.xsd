@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="bdDataSet" targetNamespace="http://tempuri.org/bdDataSet.xsd" xmlns:mstns="http://tempuri.org/bdDataSet.xsd" xmlns="http://tempuri.org/bdDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bdConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bdConnectionString (Settings)" PropertyReference="ApplicationSettings.ROL.Properties.Settings.GlobalReference.Default.bdConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="arquivodutTableAdapter" GeneratorDataComponentClassName="arquivodutTableAdapter" Name="arquivodut" UserDataComponentName="arquivodutTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="bdConnectionString (Settings)" DbObjectName="arquivodut" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT cod_servico, documento, descricao FROM arquivodut</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cod_servico" DataSetColumn="cod_servico" />
+              <Mapping SourceColumn="documento" DataSetColumn="documento" />
+              <Mapping SourceColumn="descricao" DataSetColumn="descricao" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="bdDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bdDataSet" msprop:Generator_UserDSName="bdDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="arquivodut" msprop:Generator_TableClassName="arquivodutDataTable" msprop:Generator_TableVarName="tablearquivodut" msprop:Generator_TablePropName="arquivodut" msprop:Generator_RowDeletingName="arquivodutRowDeleting" msprop:Generator_RowChangingName="arquivodutRowChanging" msprop:Generator_RowEvHandlerName="arquivodutRowChangeEventHandler" msprop:Generator_RowDeletedName="arquivodutRowDeleted" msprop:Generator_UserTableName="arquivodut" msprop:Generator_RowChangedName="arquivodutRowChanged" msprop:Generator_RowEvArgName="arquivodutRowChangeEvent" msprop:Generator_RowClassName="arquivodutRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_servico" msprop:Generator_ColumnVarNameInTable="columncod_servico" msprop:Generator_ColumnPropNameInRow="cod_servico" msprop:Generator_ColumnPropNameInTable="cod_servicoColumn" msprop:Generator_UserColumnName="cod_servico" type="xs:int" minOccurs="0" />
+              <xs:element name="documento" msprop:Generator_ColumnVarNameInTable="columndocumento" msprop:Generator_ColumnPropNameInRow="documento" msprop:Generator_ColumnPropNameInTable="documentoColumn" msprop:Generator_UserColumnName="documento" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
