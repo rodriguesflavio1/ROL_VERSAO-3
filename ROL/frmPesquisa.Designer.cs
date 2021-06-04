@@ -106,6 +106,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtDesfavoravel = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.pnlLogo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dganexo)).BeginInit();
@@ -836,11 +837,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(784, 628);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(70, 13);
+            this.label32.TabIndex = 58;
+            this.label32.Text = "Versão: 1.0.2";
+            // 
             // frmPesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 650);
+            this.Controls.Add(this.label32);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtDesfavoravel);
             this.Controls.Add(this.panel3);
@@ -963,6 +974,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dganexo;
+        private System.Windows.Forms.Label label32;
     }
 }
 
