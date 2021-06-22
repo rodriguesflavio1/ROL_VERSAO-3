@@ -187,8 +187,8 @@ namespace ROL
 
         private IDbConnection AbrirConexao()
         {
-            return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;");
-            //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;");
+            //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;");
+            return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;");
         }
 
         private string EscolherArquivo()
@@ -233,8 +233,8 @@ namespace ROL
             strQuery += string.Format(" nome_arquivo =  '{0}' ", arquivo);
             strQuery += string.Format(" WHERE codigo =  {0} ", codigo);
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
@@ -280,10 +280,12 @@ namespace ROL
                 CarregarGrid();
             }else if(e.ColumnIndex == 1)//sobe informações para os campos nos textbox para alteração
             {
-                btnGravarArquivo.Text = "Alterar";
+                btnGravarArquivo.Text = "Alterar Arquivo";
                 codigo = Convert.ToInt32(dgDut.Rows[e.RowIndex].Cells[2].Value.ToString());
                 txtdocumentodut.Text = dgDut.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtDescricao.Text = dgDut.Rows[e.RowIndex].Cells[4].Value.ToString();
+                btnGravarArquivo.BackColor = Color.Green;
+                btnGravarArquivo.ForeColor = Color.White;
                 
                 //entidadeDutDocumento.Codigo_servico = Convert.ToInt32(lblCodigo.Text);
                 //entidadeDutDocumento.Documento = txtdocumentodut.Text;

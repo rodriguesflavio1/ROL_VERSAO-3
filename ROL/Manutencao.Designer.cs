@@ -43,8 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtEspecialidade = new System.Windows.Forms.TextBox();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtDut = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtOpme = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -156,8 +154,6 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtEspecialidade);
             this.panel2.Controls.Add(this.btnGravar);
-            this.panel2.Controls.Add(this.label31);
-            this.panel2.Controls.Add(this.txtDut);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtOpme);
             this.panel2.Controls.Add(this.label12);
@@ -184,7 +180,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(500, 9);
+            this.label3.Location = new System.Drawing.Point(270, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 68;
@@ -192,7 +188,7 @@
             // 
             // txtEspecialidade
             // 
-            this.txtEspecialidade.Location = new System.Drawing.Point(503, 27);
+            this.txtEspecialidade.Location = new System.Drawing.Point(273, 27);
             this.txtEspecialidade.Name = "txtEspecialidade";
             this.txtEspecialidade.Size = new System.Drawing.Size(217, 20);
             this.txtEspecialidade.TabIndex = 4;
@@ -206,22 +202,6 @@
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(251, 9);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(24, 13);
-            this.label31.TabIndex = 65;
-            this.label31.Text = "Dut";
-            // 
-            // txtDut
-            // 
-            this.txtDut.Location = new System.Drawing.Point(254, 27);
-            this.txtDut.Name = "txtDut";
-            this.txtDut.Size = new System.Drawing.Size(217, 20);
-            this.txtDut.TabIndex = 3;
             // 
             // label2
             // 
@@ -306,7 +286,7 @@
             this.btnAbrirArquivo.Name = "btnAbrirArquivo";
             this.btnAbrirArquivo.Size = new System.Drawing.Size(195, 61);
             this.btnAbrirArquivo.TabIndex = 8;
-            this.btnAbrirArquivo.Text = "Abrir Arquivo";
+            this.btnAbrirArquivo.Text = "Cadastro DUT";
             this.btnAbrirArquivo.UseVisualStyleBackColor = false;
             this.btnAbrirArquivo.Click += new System.EventHandler(this.btnAbrirArquivo_Click);
             // 
@@ -353,8 +333,6 @@
         private System.Windows.Forms.TextBox txtDesfavoravel;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtFavoravel;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox txtDut;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEspecialidade;

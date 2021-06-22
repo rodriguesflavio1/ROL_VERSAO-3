@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisa));
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dganexo = new System.Windows.Forms.DataGridView();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblDut = new System.Windows.Forms.Label();
             this.txtDut = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -105,9 +106,9 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDesfavoravel = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
             this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dganexo)).BeginInit();
             this.panel3.SuspendLayout();
@@ -117,7 +118,6 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogo
@@ -130,11 +130,20 @@
             this.pnlLogo.Size = new System.Drawing.Size(1039, 81);
             this.pnlLogo.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1038, 90);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dganexo);
-            this.panel1.Controls.Add(this.label31);
+            this.panel1.Controls.Add(this.lblDut);
             this.panel1.Controls.Add(this.txtDut);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label29);
@@ -157,14 +166,14 @@
             this.dganexo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dganexo_CellClick);
             this.dganexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dganexo_CellContentClick);
             // 
-            // label31
+            // lblDut
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(5, 218);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(30, 13);
-            this.label31.TabIndex = 52;
-            this.label31.Text = "DUT";
+            this.lblDut.AutoSize = true;
+            this.lblDut.Location = new System.Drawing.Point(5, 218);
+            this.lblDut.Name = "lblDut";
+            this.lblDut.Size = new System.Drawing.Size(30, 13);
+            this.lblDut.TabIndex = 52;
+            this.lblDut.Text = "DUT";
             // 
             // txtDut
             // 
@@ -828,15 +837,6 @@
             this.txtDesfavoravel.Size = new System.Drawing.Size(748, 57);
             this.txtDesfavoravel.TabIndex = 56;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1038, 90);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -872,6 +872,7 @@
             this.Text = "Consulta Rol e Procedimento Padronizados";
             this.Load += new System.EventHandler(this.frmPesquisa_Load);
             this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dganexo)).EndInit();
@@ -889,7 +890,6 @@
             this.panel10.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -961,7 +961,7 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtFavoravel;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblDut;
         private System.Windows.Forms.TextBox txtDut;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;

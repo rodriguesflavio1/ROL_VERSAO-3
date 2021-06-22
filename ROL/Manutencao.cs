@@ -44,8 +44,7 @@ namespace ROL
 
                     this.txtCodigo.Text = listaDut[0].Codigo.ToString();
                     this.txtEspecialidade.Text = listaDut[0].Especialidade.ToString();
-                    this.txtOpme.Text = listaDut[0].Opme.ToString();
-                    this.txtDut.Text = listaDut[0].Dut.ToString();
+                    this.txtOpme.Text = listaDut[0].Opme.ToString();                    
                     this.txtFavoravel.Text = listaDut[0].Favoravel.ToString();
                     this.txtDesfavoravel.Text = listaDut[0].Desfavoravel.ToString();
                     return;
@@ -88,8 +87,7 @@ namespace ROL
             EntidadeDut entidadeDut = new EntidadeDut();
             try
             {                
-                entidadeDut.Codigo = Convert.ToDouble(txtCodigo.Text);
-                entidadeDut.Dut = txtDut.Text;
+                entidadeDut.Codigo = Convert.ToDouble(txtCodigo.Text);                
                 entidadeDut.Especialidade = txtEspecialidade.Text;
                 entidadeDut.Opme = txtOpme.Text;
                 entidadeDut.Desfavoravel = txtDesfavoravel.Text;
@@ -112,8 +110,7 @@ namespace ROL
           
                 entidade.Codigo = Convert.ToDouble(txtCodigo.Text); 
                 entidade.Especialidade = txtEspecialidade.Text;  
-                entidade.Opme = txtOpme.Text;
-                entidade.Dut = txtDut.Text; 
+                entidade.Opme = txtOpme.Text;               
                 entidade.Favoravel = txtFavoravel.Text; 
                 entidade.Desfavoravel = txtDesfavoravel.Text;
 
@@ -123,13 +120,13 @@ namespace ROL
 
         private void btnAbrirArquivo_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtConsulta.Text))
+            if (!string.IsNullOrEmpty(txtCodigo.Text))
             {
                 ArquivoDut arquivoDut = new ArquivoDut(codigo);
                 arquivoDut.Show();
             }else
             {
-                MessageBox.Show("Obrigatório preecher o Codigo Consulta!");
+                MessageBox.Show("Obrigatório realiza a consulta do Codigo de Serviço!");
                 txtConsulta.Focus();
             }
             
@@ -139,8 +136,7 @@ namespace ROL
         {
             txtCodigo.Text = String.Empty;
             txtConsulta.Text = String.Empty;
-            txtDesfavoravel.Text = String.Empty;
-            txtDut.Text = String.Empty;
+            txtDesfavoravel.Text = String.Empty;            
             txtEspecialidade.Text = String.Empty;
             txtFavoravel.Text = String.Empty;
             txtOpme.Text = String.Empty;

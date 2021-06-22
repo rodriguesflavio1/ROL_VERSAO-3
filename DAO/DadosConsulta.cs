@@ -32,8 +32,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -285,8 +285,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\sadt.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -490,8 +490,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\HM.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -693,8 +693,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-           // string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\Aba.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;            
@@ -748,8 +748,8 @@ namespace DAO
                 //" = ",
                 //codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\Aba.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -803,8 +803,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -884,8 +884,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataAdapter oleDBDataAdapter = new OleDbDataAdapter(oleDbCommand);
@@ -920,8 +920,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             
@@ -954,8 +954,8 @@ namespace DAO
                 " = ",
                 codigo
             });
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -1037,8 +1037,8 @@ namespace DAO
                 " = ",
                 codigo
            });
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\HM.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(stringWithEscapes, oleDbConnection);
             //OleDbDataAdapter adapter = new OleDbDataAdapter();
@@ -1090,8 +1090,8 @@ namespace DAO
 
             List<EntidadeLogin> listaEntidade = new List<EntidadeLogin>();
             string cmdText = $"SELECT * FROM Usuario WHERE nome = \'{nome.Trim()}\' and senha = \'{senha.Trim()}\' ";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\Usuario.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
@@ -1129,11 +1129,11 @@ namespace DAO
 
         public void InserirDut(EntidadeDut entidadeDut) {
             var cmdText = "";
-            cmdText += "INSERT INTO dut(Codigo,DUT,OPME,Especialidade,Favoravel,Desfavoravel)";
-            cmdText += string.Format(" values ('{0}','{1}','{2}','{3}','{4}','{5}') ", entidadeDut.Codigo,entidadeDut.Dut,entidadeDut.Opme,entidadeDut.Especialidade,entidadeDut.Favoravel,entidadeDut.Desfavoravel);
+            cmdText += "INSERT INTO dut(Codigo,OPME,Especialidade,Favoravel,Desfavoravel)";
+            cmdText += string.Format(" values ('{0}','{1}','{2}','{3}','{4}') ", entidadeDut.Codigo,entidadeDut.Opme,entidadeDut.Especialidade,entidadeDut.Favoravel,entidadeDut.Desfavoravel);
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-           //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+           string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
            
@@ -1155,15 +1155,14 @@ namespace DAO
         {
             var strQuery = "";
             strQuery += "update dut set";
-            strQuery += string.Format(" DUT =  '{0}', ", entidadeDut.Dut);
             strQuery += string.Format(" OPME =  '{0}' ,", entidadeDut.Opme);
             strQuery += string.Format(" Especialidade =  '{0}' ,", entidadeDut.Especialidade);
             strQuery += string.Format(" Favoravel =  '{0}' ,", entidadeDut.Favoravel);
             strQuery += string.Format(" Desfavoravel =  '{0}' ", entidadeDut.Desfavoravel);
             strQuery += string.Format(" WHERE Codigo =  {0} ", entidadeDut.Codigo);
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
@@ -1190,8 +1189,8 @@ namespace DAO
             strQuery += string.Format(" documento =  '{0}' ,", entidadeDutDocumento.Documento);
             strQuery += string.Format(" WHERE Codigo =  {0} ", codigo);
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\dut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
@@ -1215,8 +1214,8 @@ namespace DAO
             cmdText += "INSERT INTO arquivodut(cod_servico,documento,descricao,nome_arquivo)";
             cmdText += string.Format("values ('{0}','{1}','{2}','{3}')", entidadeDutDocumento.Codigo_servico, entidadeDutDocumento.Documento, entidadeDutDocumento.Descricao, entidadeDutDocumento.NomeArquivo);
 
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             
@@ -1244,8 +1243,8 @@ namespace DAO
             var strQuery = "";
             strQuery += "delete from arquivodut";
             strQuery += string.Format(" WHERE Codigo =  {0} ", codigo);
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;";
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 

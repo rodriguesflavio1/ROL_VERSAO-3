@@ -30,7 +30,9 @@ namespace ROL
         public frmPesquisa()
         {
             InitializeComponent();
-            entidade.NomeCampo = "Codigo";           
+            entidade.NomeCampo = "Codigo";
+            lblDut.Visible = false;
+            txtDut.Visible = false;     
         }
 
         private void frmPesquisa_Load(object sender, EventArgs e)
@@ -591,8 +593,8 @@ namespace ROL
 
         private IDbConnection AbrirConexao()
         {
-            return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;");
-            //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;");
+            //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;");
+            return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\arquivodut.mdb;Persist Security Info=False;");
         }
 
         private void ConfigurarParametrosAbrir(IDbCommand com)
