@@ -135,6 +135,7 @@ namespace ROL
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtCodigo.Text = String.Empty;
+            txtCodigo.Enabled = true;
             txtConsulta.Text = String.Empty;
             txtDesfavoravel.Text = String.Empty;            
             txtEspecialidade.Text = String.Empty;

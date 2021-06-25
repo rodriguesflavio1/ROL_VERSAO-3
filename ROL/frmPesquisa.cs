@@ -31,8 +31,7 @@ namespace ROL
         {
             InitializeComponent();
             entidade.NomeCampo = "Codigo";
-            lblDut.Visible = false;
-            txtDut.Visible = false;     
+                           
         }
 
         private void frmPesquisa_Load(object sender, EventArgs e)
@@ -285,7 +284,7 @@ namespace ROL
                 this.txtOrigem.Text = list[0].Origem.ToString();
                 this.txtTotal.Text = list[0].Total.ToString();
                 this.txtAba.Text = "";
-                this.txtDut.Text = "";
+                
                 this.txtEspecialidade.Text = "";
                 this.txtObservacao.Text = "";
                 this.txtOpme.Text = "";
@@ -345,8 +344,7 @@ namespace ROL
                 this.txtExecutora.Text = list[0].Executora.ToString();
                 this.txtOrigem.Text = list[0].Origem.ToString();
                 this.txtTotal.Text = list[0].Total.ToString();
-                this.txtAba.Text = ""; 
-                this.txtDut.Text = "";
+                this.txtAba.Text = "";            
                 this.txtEspecialidade.Text = "";
                 this.txtObservacao.Text = "";
                 this.txtOpme.Text = ""; 
@@ -446,8 +444,7 @@ namespace ROL
             if (listaDut.Count > 0)
             {
                 this.txtEspecialidade.Text = listaDut[0].Especialidade.ToString();
-                this.txtOpme.Text = listaDut[0].Opme.ToString();
-                this.txtDut.Text = listaDut[0].Dut.ToString();
+                this.txtOpme.Text = listaDut[0].Opme.ToString();                
                 this.txtFavoravel.Text = listaDut[0].Favoravel.ToString();
                 this.txtDesfavoravel.Text = listaDut[0].Desfavoravel.ToString();
                 return;
@@ -528,8 +525,7 @@ namespace ROL
             this.txtAba.Text = "";
             this.txtFavoravel.Text = "";
             this.txtDesfavoravel.Text = "";
-            this.txtEspecialidade.Text = "";
-            this.txtDut.Text = "";
+            this.txtEspecialidade.Text = "";            
             this.txtOpme.Clear();
             
             //this.txt_taxa_video.Text = "";

@@ -33,8 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dganexo = new System.Windows.Forms.DataGridView();
-            this.lblDut = new System.Windows.Forms.Label();
-            this.txtDut = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.txtEspecialidade = new System.Windows.Forms.TextBox();
@@ -143,8 +141,6 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dganexo);
-            this.panel1.Controls.Add(this.lblDut);
-            this.panel1.Controls.Add(this.txtDut);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.txtEspecialidade);
@@ -165,22 +161,6 @@
             this.dganexo.TabIndex = 53;
             this.dganexo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dganexo_CellClick);
             this.dganexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dganexo_CellContentClick);
-            // 
-            // lblDut
-            // 
-            this.lblDut.AutoSize = true;
-            this.lblDut.Location = new System.Drawing.Point(5, 218);
-            this.lblDut.Name = "lblDut";
-            this.lblDut.Size = new System.Drawing.Size(30, 13);
-            this.lblDut.TabIndex = 52;
-            this.lblDut.Text = "DUT";
-            // 
-            // txtDut
-            // 
-            this.txtDut.Location = new System.Drawing.Point(8, 236);
-            this.txtDut.Name = "txtDut";
-            this.txtDut.Size = new System.Drawing.Size(217, 20);
-            this.txtDut.TabIndex = 51;
             // 
             // label30
             // 
@@ -961,8 +941,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtFavoravel;
-        private System.Windows.Forms.Label lblDut;
-        private System.Windows.Forms.TextBox txtDut;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtEspecialidade;
