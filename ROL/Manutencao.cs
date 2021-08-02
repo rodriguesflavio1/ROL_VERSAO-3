@@ -15,16 +15,25 @@ namespace ROL
     public partial class Manutencao : Form
     {
         DadosConsulta dadosConsultaDUT = new DadosConsulta();
-        public double codigo;
+        public string codigo;
+        public string banco;
+
+
         public Manutencao()
         {
             InitializeComponent();
         }
 
+        public Manutencao(string Banco)
+        {
+            InitializeComponent();
+            banco = Banco;
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             ConsultaDut();
-            txtCodigo.Enabled = false;
+            //txtCodigo.Enabled = false;
         }
         private void ConsultaDut()
         {
@@ -36,11 +45,11 @@ namespace ROL
 
             if (!string.IsNullOrEmpty(txtConsulta.Text))
             {
-                List<EntidadeDut> listaDut = dadosConsultaDut.ResgatarDadosManutencaoDut(this.txtConsulta.Text, entidade.NomeTabela, entidade.NomeCampo);
+                List<EntidadeDut> listaDut = dadosConsultaDut.ResgatarDadosManutencaoDut(this.txtConsulta.Text, entidade.NomeTabela, entidade.NomeCampo, banco);
                 if (listaDut.Count > 0)
                 {
-                    codigo = Convert.ToDouble(txtConsulta.Text);
-                   
+                    codigo = listaDut[0].Codigo.ToString();
+
 
                     this.txtCodigo.Text = listaDut[0].Codigo.ToString();
                     this.txtEspecialidade.Text = listaDut[0].Especialidade.ToString();
@@ -51,6 +60,7 @@ namespace ROL
                 }
                 else
                 {
+                    codigo = string.Empty;
                     MessageBox.Show("Não existe valores para o código pesquisado!");
                 }
             }else
@@ -70,7 +80,7 @@ namespace ROL
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text == "")
+            if (String.IsNullOrEmpty(codigo))
             {
                 InserirDut();
                 MessageBox.Show("Cadastro com Sucesso!");
@@ -91,8 +101,8 @@ namespace ROL
                 entidadeDut.Especialidade = txtEspecialidade.Text;
                 entidadeDut.Opme = txtOpme.Text;
                 entidadeDut.Desfavoravel = txtDesfavoravel.Text;
-                entidadeDut.Favoravel = Text;
-                dadosConsultaDUT.InserirDut(entidadeDut);
+                entidadeDut.Favoravel = txtFavoravel.Text;
+                dadosConsultaDUT.InserirDut(entidadeDut, banco);
             }
             catch (Exception)
             {
@@ -114,7 +124,7 @@ namespace ROL
                 entidade.Favoravel = txtFavoravel.Text; 
                 entidade.Desfavoravel = txtDesfavoravel.Text;
 
-                dadosConsultaDUT.AlterarDut(entidade);
+                dadosConsultaDUT.AlterarDut(entidade, banco);
            
         }        
 
@@ -122,7 +132,7 @@ namespace ROL
         {
             if (!string.IsNullOrEmpty(txtCodigo.Text))
             {
-                ArquivoDut arquivoDut = new ArquivoDut(codigo);
+                ArquivoDut arquivoDut = new ArquivoDut(txtCodigo.Text,banco);
                 arquivoDut.Show();
             }else
             {
@@ -147,8 +157,7 @@ namespace ROL
         {
             if (e.KeyChar == 13)
             {
-                ConsultaDut();
-                txtCodigo.Enabled = false;
+                ConsultaDut();                
             }            
         }
     }

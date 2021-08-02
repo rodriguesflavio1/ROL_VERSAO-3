@@ -17,13 +17,14 @@ namespace ROL
     {
         DadosConsulta dadosConsultaArquivoDUT = new DadosConsulta();
         EntidadeDutDocumento entidadeDutDocumento = new EntidadeDutDocumento();
+        public string banco;
+        public int codigo;
        
-        int codigo;
-       
-        public ArquivoDut(double codigo)
+        public ArquivoDut(string codigo, string Banco)
         {       
             InitializeComponent();
-            lblCodigo.Text = Convert.ToString(codigo);
+            banco = Banco;
+            lblCodigo.Text = codigo;
             CarregarGrid();
         }
 
@@ -66,7 +67,7 @@ namespace ROL
                 entidadeDutDocumento.Documento = txtdocumentodut.Text;
                 entidadeDutDocumento.Descricao = txtDescricao.Text;
                 entidadeDutDocumento.NomeArquivo = txtdocumentodut.Text;
-                dadosConsultaArquivoDUT.InserirArquivoDut(entidadeDutDocumento);
+                dadosConsultaArquivoDUT.InserirArquivoDut(entidadeDutDocumento,banco);
 
                 //txtCodigo.Text = String.Empty;
                 txtdocumentodut.Text = String.Empty;
@@ -79,7 +80,7 @@ namespace ROL
                 entidadeDutDocumento.Documento = txtdocumentodut.Text;
                 entidadeDutDocumento.Descricao = txtDescricao.Text;
                 entidadeDutDocumento.NomeArquivo = txtdocumentodut.Text;
-                dadosConsultaArquivoDUT.AlterarArquivoDut(entidadeDutDocumento,codigo);
+                dadosConsultaArquivoDUT.AlterarArquivoDut(entidadeDutDocumento,codigo,banco);
 
                 //txtCodigo.Text = String.Empty;
                 txtdocumentodut.Text = String.Empty;
@@ -94,7 +95,7 @@ namespace ROL
         {
             try
             {
-                DataTable listaDocumento = dadosConsultaArquivoDUT.ResgatarDocumentoDut(this.lblCodigo.Text, "arquivodut", "cod_servico");
+                DataTable listaDocumento = dadosConsultaArquivoDUT.ResgatarDocumentoDut(this.lblCodigo.Text, "arquivodut", "cod_servico",banco);
 
                 dgDut.DataSource = listaDocumento;
                 FormatarGrid();
@@ -137,7 +138,7 @@ namespace ROL
                     var arquivo = txtdocumentodut.Text;
                     int cod = Convert.ToInt32(lblCodigo.Text);
                     string descricao = txtDescricao.Text;
-                    SalvarArquivo(arquivo, cod, descricao);
+                    SalvarArquivo(arquivo, cod, descricao,banco);
 
                     //txtCodigo.Text = String.Empty;
                     txtdocumentodut.Text = String.Empty;
@@ -151,7 +152,7 @@ namespace ROL
                     var arquivo = txtdocumentodut.Text;
                     int cod = Convert.ToInt32(lblCodigo.Text);
                     string descricao = txtDescricao.Text;
-                    AlterarArquivo(arquivo, cod, descricao,codigo);
+                    AlterarArquivo(arquivo, cod, descricao,codigo,banco);
 
                     //txtCodigo.Text = String.Empty;
                     txtdocumentodut.Text = String.Empty;
@@ -185,10 +186,12 @@ namespace ROL
 
         }
 
-        private IDbConnection AbrirConexao()
+        private IDbConnection AbrirConexao(string nomeBanco)
         {
             //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;");
-            return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;");
+            string connectionString1 = String.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};" + "Persist Security Info=False;", nomeBanco);
+            //return new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;");
+            return new OleDbConnection(connectionString1);
         }
 
         private string EscolherArquivo()
@@ -207,10 +210,10 @@ namespace ROL
             return retorno;
         }
 
-        private void SalvarArquivo(string arquivo, Int32 cod, string descricao)
+        private void SalvarArquivo(string arquivo, Int32 cod, string descricao,string nomeBanco)
         {
 
-            using (var con = AbrirConexao())
+            using (var con = AbrirConexao(nomeBanco))
             {
                 con.Open();
                 using (var comando = con.CreateCommand())
@@ -223,7 +226,7 @@ namespace ROL
             }
         }
 
-        private void AlterarArquivo(string arquivo, Int32 cod, string descricao, int codigo)
+        private void AlterarArquivo(string arquivo, Int32 cod, string descricao, int codigo, string nomeBanco)
         {
             var strQuery = "";
             strQuery += "update arquivodut set";
@@ -233,8 +236,12 @@ namespace ROL
             strQuery += string.Format(" nome_arquivo =  '{0}' ", arquivo);
             strQuery += string.Format(" WHERE codigo =  {0} ", codigo);
 
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd_2021_2.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
@@ -276,7 +283,7 @@ namespace ROL
             if (e.ColumnIndex == 0)
             {
                 codigo = Convert.ToInt32(dgDut.Rows[e.RowIndex].Cells[2].Value.ToString());
-                dadosConsultaArquivoDUT.ExcluirArquivoDut(codigo);
+                dadosConsultaArquivoDUT.ExcluirArquivoDut(codigo,banco);
                 CarregarGrid();
             }else if(e.ColumnIndex == 1)//sobe informações para os campos nos textbox para alteração
             {

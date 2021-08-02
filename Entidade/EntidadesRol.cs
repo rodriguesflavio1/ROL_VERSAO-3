@@ -44,8 +44,7 @@ namespace Entidade
         private string tabelaAba;
         //private string codigoPorteMedico;
         //private double valorPorteMedico;
-        private string valorIntercambioHM;
-
+        private string valorIntercambioHM;       
 
         public double CodigoAMB
         {
@@ -514,5 +513,6 @@ namespace Entidade
                 valorIntercambioHM = value;
             }
         }
+       
     }
 }

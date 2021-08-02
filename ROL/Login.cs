@@ -18,9 +18,17 @@ namespace ROL
     {
         
         DadosConsulta consulta = new DadosConsulta();
+       public string banco;
+
         public Login()
         {
             InitializeComponent();
+        }
+
+        public Login(string Banco)
+        {
+            InitializeComponent();
+            banco = Banco;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -30,13 +38,15 @@ namespace ROL
 
         private void ConsultaUsuario()
         {
-            Manutencao formManutencao = new Manutencao();
-            List<EntidadeLogin> listaAba = consulta.ResgatarUsuario(this.txtLogin.Text.ToUpper(), this.txtSenha.Text.ToUpper());
+           
+            List<EntidadeLogin> listaAba = consulta.ResgatarUsuario(this.txtLogin.Text.ToUpper(), this.txtSenha.Text.ToUpper(),banco);
             if (listaAba.Count > 0)
             {
-               // MessageBox.Show("Bem-Vindo a Manutenção do Sistema Rol");
-                this.Hide();
+                // MessageBox.Show("Bem-Vindo a Manutenção do Sistema Rol");
+                Manutencao formManutencao = new Manutencao(banco);
                 formManutencao.Show();
+                this.Hide();
+               
             }
             else {
                 MessageBox.Show("Usuário ou Senha incorreta!");

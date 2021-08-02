@@ -8,32 +8,60 @@ namespace Entidade
 {
     public class EntidadeVersao
     {
-        string versaoAnt;
-        string versaoAtual;
+        int idVersao;
+        string versao;
+        string banco;
+        string bancoDefault;
 
-        public string VersaoAnt
+        public string Versao
         {
             get
             {
-                return versaoAnt;
+                return versao;
             }
 
             set
             {
-                versaoAnt = value;
+                versao = value;
+            }
+        }       
+
+        public string Banco
+        {
+            get
+            {
+                return banco;
+            }
+
+            set
+            {
+                banco = value;
             }
         }
 
-        public string VersaoAtual
+        public int IdVersao
         {
             get
             {
-                return versaoAtual;
+                return idVersao;
             }
 
             set
             {
-                versaoAtual = value;
+                idVersao = value;
+            }
+        }
+
+        public string BancoDefault
+        {
+            get
+            {
+                return bancoDefault;
+            }
+
+            set
+            {
+                bancoDefault = value;
             }
         }
     }

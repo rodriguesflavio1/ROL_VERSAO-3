@@ -20,6 +20,8 @@ namespace DAO
         EntidadeDutDocumento dadosEntidadeDutDocumento = new EntidadeDutDocumento();
         byte[] buffer;
 
+
+
         public List<EntidadesRol> ResgataDadosRol(string codigo, string tabela, string campo)
         {
             List<EntidadesRol> list = new List<EntidadesRol>();
@@ -273,7 +275,7 @@ namespace DAO
             return list;
         }
 
-        public List<EntidadesRol> ResgataDadosSadt(string codigo, string tabela, string campo)
+        public List<EntidadesRol> ResgataDadosSadt(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadesRol> list = new List<EntidadesRol>();
             string cmdText = string.Concat(new string[]
@@ -285,9 +287,13 @@ namespace DAO
                 " = ",
                 codigo
             });
-            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd_2020_4.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd_2020_4.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
             try
@@ -297,7 +303,7 @@ namespace DAO
                 while (oleDbDataReader.Read())
                 {
 
-                    if (tabela.Equals("sadt") || tabela.Equals("sadt_ant"))
+                    if (tabela.Equals("sadt"))
                     {
 
                         if (!oleDbDataReader.IsDBNull(0))
@@ -478,7 +484,7 @@ namespace DAO
             return list;
         }
 
-        public List<EntidadesRol> ResgataDadosHM(string codigo, string tabela, string campo)
+        public List<EntidadesRol> ResgataDadosHM(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadesRol> list = new List<EntidadesRol>();
             string cmdText = string.Concat(new string[]
@@ -490,9 +496,13 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
             try
@@ -502,7 +512,7 @@ namespace DAO
                 while (oleDbDataReader.Read())
                 {
 
-                    if (tabela.Equals("HM") || tabela.Equals("HM_ant"))
+                    if (tabela.Equals("HM"))
                     {
 
                         if (!oleDbDataReader.IsDBNull(0))
@@ -681,7 +691,7 @@ namespace DAO
             return list;
         }
 
-        public List<EntidadesRol> ResgataDadosAba(string codigo, string tabela, string campo)
+        public List<EntidadesRol> ResgataDadosAba(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadesRol> list = new List<EntidadesRol>();
             string cmdText = string.Concat(new string[]
@@ -693,9 +703,13 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;            
             try
@@ -736,62 +750,79 @@ namespace DAO
             return list;
         }
 
-        public List<EntidadeVersao> ResgataDadosVersao(string codigo, string tabela, string campo)
+        public DataTable ResgataDadosVersao(string nomeBanco)
         {
-            List<EntidadeVersao> list = new List<EntidadeVersao>();
+            
             string cmdText = string.Concat(new string[]
             {
                 "SELECT * FROM ",
-                "versao" //,
-                //" WHERE ",
-                //campo,
-                //" = ",
-                //codigo
+                "versao" 
             });
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
-            OleDbDataReader oleDbDataReader = null;
+            OleDbDataAdapter oleDBDataAdapter = new OleDbDataAdapter(oleDbCommand);
+            DataTable dataTable = new DataTable();
             try
             {
                 oleDbConnection.Open();
-                oleDbDataReader = oleDbCommand.ExecuteReader(CommandBehavior.CloseConnection);
-                while (oleDbDataReader.Read())
-                {
-                    if (!oleDbDataReader.IsDBNull(1))
-                    {
-                        dadosVersao.VersaoAnt = oleDbDataReader.GetString(1);
-                    }
-                    else
-                    {
-                        dadosVersao.VersaoAtual = "Não se Aplica";
-                    }
-                    if (!oleDbDataReader.IsDBNull(2))
-                    {
-                        dadosVersao.VersaoAtual = oleDbDataReader.GetString(2);
-                    }
-                    else
-                    {
-                        dadosVersao.VersaoAtual = "Não se Aplica";
-                    }
-
-                    list.Add(dadosVersao);
-                }
+                oleDBDataAdapter.Fill(dataTable);
             }
             finally
             {
-                if (oleDbDataReader != null)
+                if (oleDBDataAdapter != null)
                 {
-                    oleDbDataReader.Close();
+                    oleDBDataAdapter.Dispose();
                 }
             }
             oleDbConnection.Dispose();
             oleDbConnection.Close();
-            return list;
+            return dataTable;
         }
 
-        public List<EntidadesRol> ResgataDadosDut(string codigo, string tabela, string campo)
+        public DataTable ResgataDadosBanco(Int32 codigo, string campo, string nomeBanco)
+        {
+
+            string cmdText = string.Concat(new string[]
+            {
+                "SELECT * FROM ",
+                "versao" ,
+                " WHERE ",
+                campo,
+                " = ",
+                Convert.ToString(codigo)
+            });
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
+            OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
+            OleDbDataAdapter oleDBDataAdapter = new OleDbDataAdapter(oleDbCommand);
+            DataTable dataTable = new DataTable();
+            try
+            {
+                oleDbConnection.Open();
+                oleDBDataAdapter.Fill(dataTable);
+            }
+            finally
+            {
+                if (oleDBDataAdapter != null)
+                {
+                    oleDBDataAdapter.Dispose();
+                }
+            }
+            oleDbConnection.Dispose();
+            oleDbConnection.Close();
+            return dataTable;
+        }
+
+        public List<EntidadesRol> ResgataDadosDut(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadesRol> list = new List<EntidadesRol>();
             string cmdText = string.Concat(new string[]
@@ -803,9 +834,13 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
             try
@@ -872,7 +907,7 @@ namespace DAO
             return list;
         }
 
-        public DataTable ResgatarDocumentoDut(string codigo, string tabela, string campo)
+        public DataTable ResgatarDocumentoDut(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadeDutDocumento> list = new List<EntidadeDutDocumento>();
             string cmdText = string.Concat(new string[]
@@ -884,9 +919,14 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataAdapter oleDBDataAdapter = new OleDbDataAdapter(oleDbCommand);
             DataTable dataTable = new DataTable();
@@ -908,7 +948,7 @@ namespace DAO
             return dataTable;
         }
 
-        public byte[] AbrirDocumentoDut(string codigo, string tabela, string campo)
+        public byte[] AbrirDocumentoDut(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadeDutDocumento> list = new List<EntidadeDutDocumento>();
             string cmdText = string.Concat(new string[]
@@ -920,9 +960,13 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             
             try
@@ -942,7 +986,7 @@ namespace DAO
             return buffer;
         }
 
-        public List<EntidadeDut> ResgatarDadosManutencaoDut(string codigo, string tabela, string campo)
+        public List<EntidadeDut> ResgatarDadosManutencaoDut(string codigo, string tabela, string campo, string nomeBanco)
         {
             List<EntidadeDut> list = new List<EntidadeDut>();
             string cmdText = string.Concat(new string[]
@@ -954,6 +998,10 @@ namespace DAO
                 " = ",
                 codigo
             });
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", nomeBanco);
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
@@ -1086,13 +1134,19 @@ namespace DAO
             return list;
         }
 
-        public List<EntidadeLogin> ResgatarUsuario(string nome, string senha) {
-
+        public List<EntidadeLogin> ResgatarUsuario(string nome, string senha, string banco) {
+            //string banco = @"\\10.10.0.25\ROL\bd.mdb";
             List<EntidadeLogin> listaEntidade = new List<EntidadeLogin>();
             string cmdText = $"SELECT * FROM Usuario WHERE nome = \'{nome.Trim()}\' and senha = \'{senha.Trim()}\' ";
+
+
+            string connectionString1 = String.Format(
+            "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+          + "Persist Security Info=False;", banco);
+
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             OleDbDataReader oleDbDataReader = null;
             try
@@ -1127,14 +1181,19 @@ namespace DAO
 
         }
 
-        public void InserirDut(EntidadeDut entidadeDut) {
+        public void InserirDut(EntidadeDut entidadeDut, string nomeBanco) {
             var cmdText = "";
             cmdText += "INSERT INTO dut(Codigo,OPME,Especialidade,Favoravel,Desfavoravel)";
             cmdText += string.Format(" values ('{0}','{1}','{2}','{3}','{4}') ", entidadeDut.Codigo,entidadeDut.Opme,entidadeDut.Especialidade,entidadeDut.Favoravel,entidadeDut.Desfavoravel);
 
+            string connectionString1 = String.Format(
+           "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+         + "Persist Security Info=False;", nomeBanco);
+
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-           string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+           // string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
            
             try
@@ -1151,7 +1210,7 @@ namespace DAO
             oleDbConnection.Close();
         }
 
-        public void AlterarDut(EntidadeDut entidadeDut)
+        public void AlterarDut(EntidadeDut entidadeDut, string nomeBanco)
         {
             var strQuery = "";
             strQuery += "update dut set";
@@ -1161,9 +1220,14 @@ namespace DAO
             strQuery += string.Format(" Desfavoravel =  '{0}' ", entidadeDut.Desfavoravel);
             strQuery += string.Format(" WHERE Codigo =  {0} ", entidadeDut.Codigo);
 
+
+            string connectionString1 = String.Format(
+           "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+         + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
             try
@@ -1180,7 +1244,7 @@ namespace DAO
             oleDbConnection.Close();
         }
 
-        public void AlterarArquivoDut(EntidadeDutDocumento entidadeDutDocumento,int codigo)
+        public void AlterarArquivoDut(EntidadeDutDocumento entidadeDutDocumento,int codigo, string nomeBanco)
         {
             var strQuery = "";
             strQuery += "update dut set";
@@ -1189,9 +1253,14 @@ namespace DAO
             strQuery += string.Format(" documento =  '{0}' ,", entidadeDutDocumento.Documento);
             strQuery += string.Format(" WHERE Codigo =  {0} ", codigo);
 
+
+            string connectionString1 = String.Format(
+           "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+         + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
             try
@@ -1208,15 +1277,19 @@ namespace DAO
             oleDbConnection.Close();
         }
 
-        public void InserirArquivoDut(EntidadeDutDocumento entidadeDutDocumento)
+        public void InserirArquivoDut(EntidadeDutDocumento entidadeDutDocumento, string nomeBanco)
         {
             var cmdText = "";
             cmdText += "INSERT INTO arquivodut(cod_servico,documento,descricao,nome_arquivo)";
             cmdText += string.Format("values ('{0}','{1}','{2}','{3}')", entidadeDutDocumento.Codigo_servico, entidadeDutDocumento.Documento, entidadeDutDocumento.Descricao, entidadeDutDocumento.NomeArquivo);
 
+            string connectionString1 = String.Format(
+           "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+         + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
             string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(cmdText, oleDbConnection);
             
             try
@@ -1238,14 +1311,19 @@ namespace DAO
             oleDbConnection.Close();
         }
 
-        public void ExcluirArquivoDut(int codigo)
+        public void ExcluirArquivoDut(int codigo, string nomeBanco)
         {
             var strQuery = "";
             strQuery += "delete from arquivodut";
             strQuery += string.Format(" WHERE Codigo =  {0} ", codigo);
+
+            string connectionString1 = String.Format(
+           "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};"
+         + "Persist Security Info=False;", nomeBanco);
+
             //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\flavio.barbosa\Desktop\ROL_VERSAO 3\ROL\bin\Debug\bd.mdb;Persist Security Info=False;";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
-            OleDbConnection oleDbConnection = new OleDbConnection(connectionString);
+            //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\10.10.0.25\ROL\bd.mdb;Persist Security Info=False;";
+            OleDbConnection oleDbConnection = new OleDbConnection(connectionString1);
             OleDbCommand oleDbCommand = new OleDbCommand(strQuery, oleDbConnection);
 
             try

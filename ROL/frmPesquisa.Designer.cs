@@ -50,8 +50,7 @@
             this.rbdAdminstrador = new System.Windows.Forms.RadioButton();
             this.rbdUsuario = new System.Windows.Forms.RadioButton();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.rdbNova = new System.Windows.Forms.RadioButton();
-            this.rdbAnt = new System.Windows.Forms.RadioButton();
+            this.cbVersao = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
@@ -318,36 +317,23 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.rdbNova);
-            this.panel6.Controls.Add(this.rdbAnt);
+            this.panel6.Controls.Add(this.cbVersao);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(628, 87);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(160, 93);
             this.panel6.TabIndex = 4;
             // 
-            // rdbNova
+            // cbVersao
             // 
-            this.rdbNova.AutoSize = true;
-            this.rdbNova.Checked = true;
-            this.rdbNova.Location = new System.Drawing.Point(31, 54);
-            this.rdbNova.Name = "rdbNova";
-            this.rdbNova.Size = new System.Drawing.Size(58, 17);
-            this.rdbNova.TabIndex = 14;
-            this.rdbNova.TabStop = true;
-            this.rdbNova.Text = "2021,1";
-            this.rdbNova.UseVisualStyleBackColor = true;
-            // 
-            // rdbAnt
-            // 
-            this.rdbAnt.AutoSize = true;
-            this.rdbAnt.Location = new System.Drawing.Point(30, 31);
-            this.rdbAnt.Name = "rdbAnt";
-            this.rdbAnt.Size = new System.Drawing.Size(58, 17);
-            this.rdbAnt.TabIndex = 13;
-            this.rdbAnt.TabStop = true;
-            this.rdbAnt.Text = "2020.4";
-            this.rdbAnt.UseVisualStyleBackColor = true;
+            this.cbVersao.FormattingEnabled = true;
+            this.cbVersao.Items.AddRange(new object[] {
+            "Selecione"});
+            this.cbVersao.Location = new System.Drawing.Point(21, 26);
+            this.cbVersao.Name = "cbVersao";
+            this.cbVersao.Size = new System.Drawing.Size(121, 21);
+            this.cbVersao.TabIndex = 15;
+            this.cbVersao.SelectionChangeCommitted += new System.EventHandler(this.cbVersao_SelectionChangeCommitted);
             // 
             // label6
             // 
@@ -824,7 +810,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(70, 13);
             this.label32.TabIndex = 58;
-            this.label32.Text = "Versão: 1.0.2";
+            this.label32.Text = "Versão: 1.0.3";
             // 
             // frmPesquisa
             // 
@@ -889,8 +875,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.RadioButton rdbNova;
-        private System.Windows.Forms.RadioButton rdbAnt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCodigoTuss;
         private System.Windows.Forms.Label label7;
@@ -953,6 +937,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dganexo;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox cbVersao;
     }
 }
 
